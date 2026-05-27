@@ -280,13 +280,25 @@
 <section id="buy">
     <div class="container">
         <h2>Buy ScaffoldKit</h2>
+        <p style="text-align:center;font-size:15px;color:var(--text-muted);margin-bottom:24px;"><strong>Price: $39 USD</strong> — Pay with the crypto that works best for you.</p>
+
+        <div class="payment-box" style="margin-bottom:16px;">
+            <h3 style="font-size:16px;font-weight:600;margin-bottom:12px;">⚡ Bitcoin / Lightning</h3>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:8px;">Send BTC on-chain to:</p>
+            <div class="wallet-addr" id="wallet-btc">bc1q3p4njajv7sqr2zk2j8eqh7j608hpfhjeul7l5x</div>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Or pay via Lightning — email <strong>ezra_hermes@disroot.org</strong> for a Lightning invoice.</p>
+        </div>
+
+        <div class="payment-box" style="margin-bottom:16px;">
+            <h3 style="font-size:16px;font-weight:600;margin-bottom:12px;">◎ Solana (SOL / USDC / USDT)</h3>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:8px;">Send to this address (Solana network only):</p>
+            <div class="wallet-addr" id="wallet-sol">A7vcg6B1MVnDQ5BfnzifBKeDWmYWwEBBCQDHf3sxXC2R</div>
+        </div>
+
         <div class="payment-box">
-            <p style="margin-bottom:16px;font-size:15px;"><strong>Price: $39 USD</strong> — Pay with SOL or USDC (Solana network only)</p>
-            <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Send payment to this address, then email your transaction signature to the address below:</p>
-            <div class="wallet-addr" id="wallet">A7vcg6B1MVnDQ5BfnzifBKeDWmYWwEBBCQDHf3sxXC2R</div>
-            <p style="font-size:13px;color:var(--text-muted);">After sending payment, email your <strong>transaction signature</strong> and <strong>transaction signature</strong> to:</p>
-            <p style="font-size:14px;font-weight:600;margin:8px 0;">ezra_hermes@disroot.org</p>
-            <p class="note">I verify the transaction on-chain and email you the download link within minutes.</p>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;"><strong>After payment, email your transaction signature to:</strong></p>
+            <p style="font-size:15px;font-weight:600;margin:8px 0;">ezra_hermes@disroot.org</p>
+            <p class="note">I verify the transaction and email you the download link within minutes.</p>
         </div>
     </div>
 </section>
@@ -303,8 +315,12 @@
             <p>Yes — via WSL (Windows Subsystem for Linux). Native on Linux and macOS.</p>
         </div>
         <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>Bitcoin (on-chain), Lightning Network, SOL, USDC, and USDT — all on the Solana network. After sending payment, email your transaction signature to ezra_hermes@disroot.org and I'll send the download link.</p>
+        </div>
+        <div class="faq-item">
             <h3>How long does delivery take?</h3>
-            <p>Transactions on the Solana network confirm in seconds. Once I verify payment, I send the download link to your email within minutes.</p>
+            <p>Bitcoin transactions confirm in 10-30 minutes. Solana confirms in seconds. Lightning is instant. Once I verify the payment, I email the download link within minutes.</p>
         </div>
         <div class="faq-item">
             <h3>Will there be updates?</h3>
@@ -324,12 +340,21 @@
 </footer>
 
 <script>
-document.getElementById('wallet').addEventListener('click', function() {
-    navigator.clipboard.writeText(this.textContent);
-    this.textContent = '✓ Copied!';
-    setTimeout(() => {
-        this.textContent = 'A7vcg6B1MVnDQ5BfnzifBKeDWmYWwEBBCQDHf3sxXC2R';
-    }, 2000);
+document.addEventListener('DOMContentLoaded', function() {
+    ['wallet-btc', 'wallet-sol'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('click', function() {
+                var text = this.textContent;
+                navigator.clipboard.writeText(text);
+                this.textContent = '✓ Copied!';
+                var self = this;
+                setTimeout(function() {
+                    self.textContent = text;
+                }, 2000);
+            });
+        }
+    });
 });
 </script>
 
