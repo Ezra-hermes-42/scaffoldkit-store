@@ -72,6 +72,26 @@
                 "category": "Developer Tools",
                 "operatingSystem": "Linux, macOS, Windows (WSL)",
                 "applicationCategory": "DeveloperApplication"
+            },
+            {
+                "@type": "Product",
+                "position": 3,
+                "name": "SearXNG Search API — Pro Plan",
+                "description": "A privacy-respecting search API powered by SearXNG. 10,000 queries per day, no tracking, no logs. REST API with JSON responses.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Ezra Hermes"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "10",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2027-12-31",
+                    "url": "https://ezra-hermes-42.github.io/scaffoldkit-store/"
+                },
+                "category": "API Services",
+                "applicationCategory": "WebSearch"
             }
         ]
     }
@@ -92,6 +112,11 @@
             "position": 2,
             "name": "DevKit",
             "item": "https://ezra-hermes-42.github.io/scaffoldkit-store/#devkit"
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Search API",
+            "item": "https://ezra-hermes-42.github.io/scaffoldkit-store/#search-api"
         }]
     }
     </script>
@@ -135,6 +160,13 @@
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes. Future stack additions including Rust and TypeScript backends are planned and included at no extra cost."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What is the SearXNG Search API?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A privacy-respecting web search API delivering up to 10,000 queries per day on the Pro Plan. No tracking, no logs. Purchase via PayPal for an auto-generated API key."
             }
         }]
     }
@@ -383,6 +415,7 @@
         <div class="nav-links">
             <a href="/scaffoldkit-store/#features">ScaffoldKit</a>
             <a href="/scaffoldkit-store/#devkit">DevKit</a>
+            <a href="/scaffoldkit-store/#search-api">Search API</a>
             <a href="/scaffoldkit-store/#buy">Buy</a>
             <span id="cart-badge" style="display:none;background:var(--accent);color:white;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;margin-left:-8px;"></span>
             <a href="/scaffoldkit-store/#faq">FAQ</a>
@@ -410,9 +443,15 @@
                 <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Environment Starter Pack</p>
                 <a href="#devkit" style="display:inline-block;margin-top:12px;font-size:13px;color:var(--accent);text-decoration:none;">Learn more →</a>
             </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 28px;min-width:200px;text-align:center;">
+                <div style="font-size:14px;color:var(--text-muted);margin-bottom:8px;">Search API</div>
+                <div class="price" style="font-size:32px;">$10 <span style="font-size:14px;">/mo</span></div>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Privacy-First Web Search</p>
+                <a href="#search-api" style="display:inline-block;margin-top:12px;font-size:13px;color:var(--accent);text-decoration:none;">Learn more →</a>
+            </div>
         </div>
 
-        <p class="guarantee">✔ Both include lifetime access · Free updates · 7-day money-back guarantee</p>
+        <p class="guarantee">✔ ScaffoldKit &amp; DevKit include lifetime access · Free updates · 7-day money-back guarantee</p>
         <a href="#buy" class="btn">Buy now — Crypto accepted</a>
         <a href="#features" class="btn btn-secondary">ScaffoldKit features ↓</a>
     </div>
@@ -646,6 +685,55 @@
     </div>
 </section>
 
+<section id="search-api" aria-label="SearXNG Search API — Privacy-First Web Search">
+    <div class="container">
+        <h2>SearXNG Search API — Pro Plan</h2>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <span class="price" style="font-size:28px;">$10 <span style="font-size:14px;font-weight:400;">/month</span></span>
+            <span style="font-size:13px;color:var(--text-muted);">· 10,000 queries/day · No tracking · No logs</span>
+        </div>
+        <p class="section-sub">A privacy-respecting search API powered by SearXNG. No tracking, no logs, no data collection — just clean search results for your applications.</p>
+
+        <div class="features-grid" style="margin-bottom:32px;">
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>Your search queries are never tracked, logged, or sold. SearXNG aggregates results from multiple engines without compromising your privacy.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>10,000 Queries/Day</h3>
+                <p>The Pro Plan gives you up to 10,000 search API calls per day — enough for production applications, automation, and research.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⚡</div>
+                <h3>REST API</h3>
+                <p>Simple JSON API. Just send an HTTP request and get structured search results. Works with any programming language or tool.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔑</div>
+                <h3>Instant API Key</h3>
+                <p>Purchase via PayPal and your API key is auto-generated and emailed to you immediately. No waiting, no approvals.</p>
+            </div>
+        </div>
+
+        <div style="margin-bottom:32px;">
+            <h3 style="font-size:16px;font-weight:600;margin-bottom:12px;">API quick start</h3>
+            <div class="code-block">
+                <span class="comment"># Search via the SearXNG API</span><br>
+                <span class="cmd">$</span> curl "http://173.212.228.151:8081/search?q=privacy+search+api&amp;format=json" \<br>
+                <span class="cmd">  -H</span> "Authorization: Bearer YOUR_API_KEY"<br>
+                <span class="output">{"results": [...], "total": 42, "engine": "searxng"}</span>
+            </div>
+        </div>
+
+        <div style="text-align:center;">
+            <a href="http://173.212.228.151:8081/" class="btn" target="_blank">View API Documentation →</a>
+            <a href="#buy" class="btn btn-secondary">Subscribe Now ↓</a>
+        </div>
+    </div>
+</section>
+
 <section id="buy" aria-label="Buy" style="padding:64px 0;border-top:1px solid var(--border);">
     <div class="container">
         <h2>Checkout</h2>
@@ -727,6 +815,24 @@
                         <li style="padding:4px 0;">✓ docker-cleanup script</li>
                         <li style="padding:4px 0;">✓ project-init script</li>
                         <li style="padding:4px 0;">✓ One-command setup</li>
+                    </ul>
+                </div>
+
+                <div style="flex:1;min-width:280px;background:var(--surface);border:2px solid var(--border);border-radius:12px;padding:28px;transition:border-color .2s;position:relative;" id="product-search-api" onclick="toggleProduct('search-api')">
+                    <div style="position:absolute;top:16px;right:16px;">
+                        <div style="width:24px;height:24px;border:2px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;" id="check-search-api">
+                            <span style="display:none;">✓</span>
+                        </div>
+                    </div>
+                    <div class="icon" style="font-size:28px;margin-bottom:12px;">🔍</div>
+                    <h3 style="font-size:18px;font-weight:700;margin-bottom:4px;">Search API</h3>
+                    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">Privacy-First Web Search API</p>
+                    <div class="price" style="font-size:28px;color:var(--green);font-weight:700;">$10 <span style="font-size:13px;font-weight:400;color:var(--text-muted);">/month</span></div>
+                    <ul style="margin-top:16px;font-size:13px;color:var(--text-muted);list-style:none;padding:0;">
+                        <li style="padding:4px 0;">✓ 10,000 queries/day</li>
+                        <li style="padding:4px 0;">✓ No tracking</li>
+                        <li style="padding:4px 0;">✓ No logs</li>
+                        <li style="padding:4px 0;">✓ Privacy-respecting</li>
                     </ul>
                 </div>
             </div>
@@ -843,6 +949,23 @@
                         </form>
                     </div>
 
+                    <!-- Search API ($10/month) -->
+                    <div id="paypal-form-search-api" style="display:none;">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="ezra_hermes@disroot.org">
+                            <input type="hidden" name="item_name" value="SearXNG Search API — Pro Plan">
+                            <input type="hidden" name="amount" value="10.00">
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="notify_url" value="http://173.212.228.151/paypal-ipn">
+                            <input type="hidden" name="return" value="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+                            <input type="hidden" name="cancel_return" value="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+                            <input type="hidden" name="no_shipping" value="1">
+                            <input type="hidden" name="custom" value="search-api">
+                            <input type="submit" value="Subscribe $10/month with PayPal" style="background:var(--accent);color:white;border:none;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;">
+                        </form>
+                    </div>
+
                     <!-- Bundle ($45) -->
                     <div id="paypal-form-bundle" style="display:none;">
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -917,6 +1040,10 @@
             <p>Three utility scripts: <strong>git-cleanup</strong> (prunes stale branches and merged remotes), <strong>docker-cleanup</strong> (removes stopped containers, dangling images, unused networks, and build cache), and <strong>project-init</strong> (generates a standard project skeleton with src/, tests/, docs/, scripts/, Makefile, README, .gitignore, and .editorconfig). Plus a setup script that installs everything and backs up your existing dotfiles.</p>
         </div>
         <div class="faq-item">
+            <h3>What is the SearXNG Search API?</h3>
+            <p>The SearXNG Search API is a privacy-respecting web search API that delivers up to 10,000 queries per day on the Pro Plan ($10/month). No tracking, no logs, full privacy. Purchase via PayPal — your API key is auto-generated and emailed to you instantly. <a href="http://173.212.228.151:8081/" target="_blank">View API docs →</a></p>
+        </div>
+        <div class="faq-item">
             <h3>Can I buy both products?</h3>
             <p>Yes! Send $48 total to the same crypto addresses — just include both product names in your email so I can send you both downloads. Or make two separate payments if you prefer.</p>
         </div>
@@ -952,13 +1079,13 @@
 <footer>
     <div class="container">
         <p>© 2026 <strong>Ezra Hermes</strong> — Developer tools for people who ship. Built with 🖤 for the open-source community.</p>
-        <p style="margin-top:8px;font-size:12px;"><a href="https://ezra-hermes-42.github.io/scaffoldkit-store/">ScaffoldKit</a> ($39) — CLI project scaffolder · <a href="https://ezra-hermes-42.github.io/scaffoldkit-store/#devkit">DevKit</a> ($9) — Environment starter pack. Pay with BTC, Lightning, SOL, USDC, or USDT.</p>
+        <p style="margin-top:8px;font-size:12px;"><a href="https://ezra-hermes-42.github.io/scaffoldkit-store/">ScaffoldKit</a> ($39) · <a href="https://ezra-hermes-42.github.io/scaffoldkit-store/#devkit">DevKit</a> ($9) · <a href="https://ezra-hermes-42.github.io/scaffoldkit-store/#search-api">Search API</a> ($10/mo) — Privacy-first web search API. Pay with BTC, Lightning, SOL, USDC, USDT, or PayPal.</p>
     </div>
 </footer>
 
 <script>
 // ── Checkout State ──
-var cart = { scaffoldkit: false, devkit: false };
+var cart = { scaffoldkit: false, devkit: false, searchapi: false };
 var selectedPayment = 'btc';
 var currentStep = 1;
 
@@ -971,17 +1098,21 @@ function toggleProduct(product) {
 function updateCartUI() {
     var hasScaffoldkit = cart.scaffoldkit;
     var hasDevkit = cart.devkit;
-    var count = (hasScaffoldkit ? 1 : 0) + (hasDevkit ? 1 : 0);
+    var hasSearchApi = cart.searchapi;
+    var count = (hasScaffoldkit ? 1 : 0) + (hasDevkit ? 1 : 0) + (hasSearchApi ? 1 : 0);
     
     // Update product card borders
     var sk = document.getElementById('product-scaffoldkit');
     var dk = document.getElementById('product-devkit');
+    var sa = document.getElementById('product-search-api');
     sk.style.borderColor = hasScaffoldkit ? 'var(--accent)' : 'var(--border)';
     dk.style.borderColor = hasDevkit ? 'var(--accent)' : 'var(--border)';
+    sa.style.borderColor = hasSearchApi ? 'var(--accent)' : 'var(--border)';
     
     // Update checkmarks
     var skCheck = document.getElementById('check-scaffoldkit');
     var dkCheck = document.getElementById('check-devkit');
+    var saCheck = document.getElementById('check-search-api');
     skCheck.style.background = hasScaffoldkit ? 'var(--accent)' : 'transparent';
     skCheck.style.borderColor = hasScaffoldkit ? 'var(--accent)' : 'var(--border)';
     skCheck.querySelector('span').style.display = hasScaffoldkit ? 'block' : 'none';
@@ -990,9 +1121,13 @@ function updateCartUI() {
     dkCheck.style.borderColor = hasDevkit ? 'var(--accent)' : 'var(--border)';
     dkCheck.querySelector('span').style.display = hasDevkit ? 'block' : 'none';
     dkCheck.querySelector('span').style.color = 'white';
+    saCheck.style.background = hasSearchApi ? 'var(--accent)' : 'transparent';
+    saCheck.style.borderColor = hasSearchApi ? 'var(--accent)' : 'var(--border)';
+    saCheck.querySelector('span').style.display = hasSearchApi ? 'block' : 'none';
+    saCheck.querySelector('span').style.color = 'white';
     
     // Update cart
-    var total = (hasScaffoldkit ? 39 : 0) + (hasDevkit ? 9 : 0);
+    var total = (hasScaffoldkit ? 39 : 0) + (hasDevkit ? 9 : 0) + (hasSearchApi ? 10 : 0);
     var totalItems = document.getElementById('cart-total-items');
     var cartItems = document.getElementById('cart-items');
     var cartEmpty = document.getElementById('cart-empty');
@@ -1013,7 +1148,8 @@ function updateCartUI() {
         var itemsHtml = '';
         if (hasScaffoldkit) itemsHtml += '<div style="display:flex;justify-content:space-between;padding:8px 0;"><span>🔧 ScaffoldKit</span><strong>$39</strong></div>';
         if (hasDevkit) itemsHtml += '<div style="display:flex;justify-content:space-between;padding:8px 0;"><span>📁 DevKit</span><strong>$9</strong></div>';
-        if (hasScaffoldkit && hasDevkit) {
+        if (hasSearchApi) itemsHtml += '<div style="display:flex;justify-content:space-between;padding:8px 0;"><span>🔍 Search API — Pro Plan</span><strong>$10/mo</strong></div>';
+        if (hasScaffoldkit && hasDevkit && !hasSearchApi) {
             itemsHtml += '<div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--accent);font-size:13px;"><span>📦 Bundle discount</span><span>-$3</span></div>';
             total = 45;
         }
@@ -1021,7 +1157,7 @@ function updateCartUI() {
         
         cartSummary.style.display = 'block';
         totalPrice.textContent = '$' + total + ' USD';
-        bundleNotice.style.display = (hasScaffoldkit && hasDevkit) ? 'block' : 'none';
+        bundleNotice.style.display = (hasScaffoldkit && hasDevkit && !hasSearchApi) ? 'block' : 'none';
     }
     
     // Cart badge in navbar
@@ -1043,7 +1179,7 @@ function goToStep(step) {
     
     // Validate step 1 → 2
     if (step === 2) {
-        var count = (cart.scaffoldkit ? 1 : 0) + (cart.devkit ? 1 : 0);
+        var count = (cart.scaffoldkit ? 1 : 0) + (cart.devkit ? 1 : 0) + (cart.searchapi ? 1 : 0);
         if (count === 0) {
             document.getElementById('select-error').style.display = 'block';
             return;
@@ -1053,10 +1189,11 @@ function goToStep(step) {
         var names = [];
         if (cart.scaffoldkit) names.push('ScaffoldKit');
         if (cart.devkit) names.push('DevKit');
+        if (cart.searchapi) names.push('Search API');
         document.getElementById('step2-products').textContent = names.join(' + ');
         
-        var total = (cart.scaffoldkit ? 39 : 0) + (cart.devkit ? 9 : 0);
-        if (cart.scaffoldkit && cart.devkit) total = 45;
+        var total = (cart.scaffoldkit ? 39 : 0) + (cart.devkit ? 9 : 0) + (cart.searchapi ? 10 : 0);
+        if (cart.scaffoldkit && cart.devkit && !cart.searchapi) total = 45;
         document.getElementById('step2-total').textContent = '$' + total + ' USD';
         
         // Update payment amounts
@@ -1070,6 +1207,7 @@ function goToStep(step) {
         var confirmNames = [];
         if (cart.scaffoldkit) confirmNames.push('ScaffoldKit');
         if (cart.devkit) confirmNames.push('DevKit');
+        if (cart.searchapi) confirmNames.push('Search API');
         document.getElementById('confirm-products').textContent = confirmNames.join(' + ');
     }
     
@@ -1136,9 +1274,11 @@ function selectPayment(method) {
     if (method === 'paypal') {
         var hasSk = cart.scaffoldkit;
         var hasDk = cart.devkit;
-        document.getElementById('paypal-form-scaffoldkit').style.display = (hasSk && !hasDk) ? 'block' : 'none';
-        document.getElementById('paypal-form-devkit').style.display = (!hasSk && hasDk) ? 'block' : 'none';
-        document.getElementById('paypal-form-bundle').style.display = (hasSk && hasDk) ? 'block' : 'none';
+        var hasSa = cart.searchapi;
+        document.getElementById('paypal-form-scaffoldkit').style.display = (hasSk && !hasDk && !hasSa) ? 'block' : 'none';
+        document.getElementById('paypal-form-devkit').style.display = (!hasSk && hasDk && !hasSa) ? 'block' : 'none';
+        document.getElementById('paypal-form-search-api').style.display = (!hasSk && !hasDk && hasSa) ? 'block' : 'none';
+        document.getElementById('paypal-form-bundle').style.display = (hasSk && hasDk && !hasSa) ? 'block' : 'none';
     }
 }
 
