@@ -768,6 +768,11 @@
                     <div style="font-size:14px;font-weight:600;color:var(--text);">Solana</div>
                     <div style="font-size:12px;color:var(--text-muted);">SOL / USDC / USDT</div>
                 </button>
+                <button onclick="selectPayment('paypal')" class="payment-method-btn" data-method="paypal" style="flex:1;min-width:140px;padding:16px 20px;border:2px solid var(--border);border-radius:10px;background:var(--surface);cursor:pointer;transition:all .2s;text-align:center;font-family:inherit;">
+                    <div style="font-size:24px;margin-bottom:6px;">💳</div>
+                    <div style="font-size:14px;font-weight:600;color:var(--text);">PayPal</div>
+                    <div style="font-size:12px;color:var(--text-muted);">Card or Balance</div>
+                </button>
             </div>
 
             <!-- Payment Details -->
@@ -797,6 +802,65 @@
                     <div class="wallet-addr" id="wallet-sol-display" style="user-select:all;">A7vcg6B1MVnDQ5BfnzifBKeDWmYWwEBBCQDHf3sxXC2R</div>
                     <button onclick="copyAddress('A7vcg6B1MVnDQ5BfnzifBKeDWmYWwEBBCQDHf3sxXC2R', this)" class="btn" style="font-size:13px;padding:8px 20px;margin-top:8px;border:none;cursor:pointer;">📋 Copy address</button>
                     <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">⚠️ Solana network only — not to other chains</p>
+                </div>
+
+                <!-- PayPal -->
+                <div id="pay-paypal" class="pay-detail" style="display:none;">
+                    <h3>Pay with PayPal</h3>
+                    <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">You'll be redirected to PayPal to complete payment. Your download link will be emailed after payment.</p>
+
+                    <!-- ScaffoldKit ($39) -->
+                    <div id="paypal-form-scaffoldkit" style="display:none;">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="ezra_hermes@disroot.org">
+                            <input type="hidden" name="item_name" value="ScaffoldKit — CLI Project Scaffolder">
+                            <input type="hidden" name="amount" value="39.00">
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="notify_url" value="http://173.212.228.151/paypal-ipn">
+                            <input type="hidden" name="return" value="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+                            <input type="hidden" name="cancel_return" value="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+                            <input type="hidden" name="no_shipping" value="1">
+                            <input type="hidden" name="custom" value="scaffoldkit">
+                            <input type="submit" value="Pay $39 with PayPal" style="background:var(--accent);color:white;border:none;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;">
+                        </form>
+                    </div>
+
+                    <!-- DevKit ($9) -->
+                    <div id="paypal-form-devkit" style="display:none;">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="ezra_hermes@disroot.org">
+                            <input type="hidden" name="item_name" value="DevKit — Developer Environment Starter Pack">
+                            <input type="hidden" name="amount" value="9.00">
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="notify_url" value="http://173.212.228.151/paypal-ipn">
+                            <input type="hidden" name="return" value="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+                            <input type="hidden" name="cancel_return" value="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+                            <input type="hidden" name="no_shipping" value="1">
+                            <input type="hidden" name="custom" value="devkit">
+                            <input type="submit" value="Pay $9 with PayPal" style="background:var(--accent);color:white;border:none;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;">
+                        </form>
+                    </div>
+
+                    <!-- Bundle ($45) -->
+                    <div id="paypal-form-bundle" style="display:none;">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="ezra_hermes@disroot.org">
+                            <input type="hidden" name="item_name" value="ScaffoldKit + DevKit Bundle">
+                            <input type="hidden" name="amount" value="45.00">
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="notify_url" value="http://173.212.228.151/paypal-ipn">
+                            <input type="hidden" name="return" value="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+                            <input type="hidden" name="cancel_return" value="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+                            <input type="hidden" name="no_shipping" value="1">
+                            <input type="hidden" name="custom" value="bundle">
+                            <input type="submit" value="Pay $45 with PayPal" style="background:var(--accent);color:white;border:none;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;">
+                        </form>
+                    </div>
+
+                    <p style="font-size:13px;color:var(--text-muted);margin-top:16px;">🔒 Secure checkout via PayPal. No account required to pay with a credit or debit card.</p>
                 </div>
             </div>
 
@@ -1060,13 +1124,22 @@ function selectPayment(method) {
     });
     
     // Show selected payment details
-    var methods = ['btc', 'lightning', 'solana'];
+    var methods = ['btc', 'lightning', 'solana', 'paypal'];
     methods.forEach(function(m) {
         var el = document.getElementById('pay-' + m);
         if (el) {
             el.style.display = (m === method) ? 'block' : 'none';
         }
     });
+
+    // Show the correct PayPal form based on cart
+    if (method === 'paypal') {
+        var hasSk = cart.scaffoldkit;
+        var hasDk = cart.devkit;
+        document.getElementById('paypal-form-scaffoldkit').style.display = (hasSk && !hasDk) ? 'block' : 'none';
+        document.getElementById('paypal-form-devkit').style.display = (!hasSk && hasDk) ? 'block' : 'none';
+        document.getElementById('paypal-form-bundle').style.display = (hasSk && hasDk) ? 'block' : 'none';
+    }
 }
 
 // ── Clipboard ──
