@@ -3,7 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScaffoldKit — CLI Project Scaffolder</title>
+
+    <!-- Primary Meta Tags -->
+    <title>ScaffoldKit — CLI Project Scaffolder: Generate Python, Node.js & Go Projects</title>
+    <meta name="title" content="ScaffoldKit — CLI Project Scaffolder: Generate Python, Node.js & Go Projects">
+    <meta name="description" content="Generate production-ready Python, Node.js, and Go projects with Docker, CI/CD, linting, and testing — all from one CLI command. Stop copy-pasting boilerplate.">
+    <meta name="keywords" content="project scaffold, cli tool, python boilerplate, nodejs template, go project generator, docker setup, github actions template, developer tools, productivity">
+    <meta name="author" content="Ezra Hermes">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://ezra-hermes-42.github.io/scaffoldkit-store/">
+    <meta property="og:title" content="ScaffoldKit — CLI Project Scaffolder: Python, Node.js & Go">
+    <meta property="og:description" content="Generate production-ready projects with Docker, CI/CD, linting, and testing in one command. Works on Linux, macOS, and Windows (WSL).">
+    <meta property="og:image" content="https://ezra-hermes-42.github.io/scaffoldkit-store/og-image.png">
+    <meta property="og:price:amount" content="39">
+    <meta property="og:price:currency" content="USD">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ScaffoldKit — CLI Project Scaffolder for Developers">
+    <meta name="twitter:description" content="Generate production-ready Python, Node.js, and Go projects with Docker, CI/CD, and tooling — all in one command.">
+
+    <!-- JSON-LD Structured Data: Product -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "ScaffoldKit — CLI Project Scaffolder",
+        "description": "A CLI tool that generates production-ready Python, Node.js, and Go project directories with Docker, CI/CD, linting, and testing pre-configured.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Ezra Hermes"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "39",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2027-12-31",
+            "url": "https://ezra-hermes-42.github.io/scaffoldkit-store/"
+        },
+        "category": "Developer Tools",
+        "operatingSystem": "Linux, macOS, Windows (WSL)",
+        "applicationCategory": "DeveloperApplication"
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ScaffoldKit",
+            "item": "https://ezra-hermes-42.github.io/scaffoldkit-store/"
+        }]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What do I get with ScaffoldKit?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A ZIP file containing the ScaffoldKit CLI executable. It generates production-ready Python, Node.js, and Go projects with Docker, CI/CD, linting, testing, editor config, and Makefiles pre-configured."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What payment methods do you accept?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We accept Bitcoin (on-chain), Lightning Network (gerhardsp@blink.sv), SOL, USDC, and USDT on the Solana network. After sending payment, email your transaction signature to ezra_hermes@disroot.org for the download link."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Does ScaffoldKit work on Windows?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — via WSL (Windows Subsystem for Linux). It runs natively on Linux and macOS."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Will there be updates to ScaffoldKit?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Future stack additions including Rust and TypeScript backends are planned and included at no extra cost."
+            }
+        }]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -26,22 +125,21 @@
             line-height: 1.6;
         }
         .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        a { color: var(--accent); }
+        img { max-width: 100%; height: auto; }
 
         /* Hero */
-        .hero {
-            padding: 80px 0 60px;
-            text-align: center;
-        }
+        .hero { padding: 80px 0 60px; text-align: center; }
         .hero-badge {
             display: inline-block;
-            background: rgba(108, 92, 231, 0.15);
+            background: rgba(108,92,231,.15);
             color: var(--accent);
             font-size: 13px;
             font-weight: 600;
-            padding: 4px 12px;
+            padding: 4px 16px;
             border-radius: 20px;
             margin-bottom: 24px;
-            border: 1px solid rgba(108, 92, 231, 0.25);
+            border: 1px solid rgba(108,92,231,.25);
         }
         .hero h1 {
             font-size: 48px;
@@ -61,12 +159,13 @@
             font-size: 36px;
             font-weight: 800;
             color: var(--green);
-            margin-bottom: 32px;
+            margin-bottom: 8px;
         }
-        .hero .price span {
-            font-size: 16px;
-            font-weight: 400;
+        .hero .price span { font-size: 16px; font-weight: 400; color: var(--text-muted); }
+        .hero .guarantee {
+            font-size: 14px;
             color: var(--text-muted);
+            margin-bottom: 28px;
         }
         .btn {
             display: inline-block;
@@ -77,22 +176,32 @@
             padding: 14px 36px;
             border-radius: 10px;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all .2s;
         }
         .btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            margin-left: 12px;
+        }
+        .btn-secondary:hover { background: var(--surface); }
 
         /* Sections */
-        section { padding: 60px 0; border-top: 1px solid var(--border); }
+        section { padding: 64px 0; border-top: 1px solid var(--border); }
         h2 {
             font-size: 28px;
             font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section-sub {
+            font-size: 15px;
+            color: var(--text-muted);
             margin-bottom: 32px;
         }
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .feature-card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -101,9 +210,9 @@
         }
         .feature-card .icon { font-size: 24px; margin-bottom: 12px; }
         .feature-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-        .feature-card p { font-size: 14px; color: var(--text-muted); }
+        .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 
-        /* Code block */
+        /* Code */
         .code-block {
             background: var(--code-bg);
             border: 1px solid var(--border);
@@ -119,39 +228,31 @@
         .code-block .cmd { color: var(--accent); }
         .code-block .output { color: var(--text-muted); }
 
-        /* How it works */
+        /* Steps */
         .steps { display: flex; flex-direction: column; gap: 16px; }
-        .step {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
+        .step { display: flex; gap: 20px; align-items: flex-start; }
         .step-num {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 8px;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 15px;
-            color: var(--accent);
-            flex-shrink: 0;
+            width: 36px; height: 36px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 15px;
+            color: var(--accent); flex-shrink: 0;
         }
         .step-content h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
         .step-content p { font-size: 14px; color: var(--text-muted); }
 
-        /* Payment */
+        /* Payment box */
         .payment-box {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 32px;
+            padding: 28px 32px;
             text-align: center;
         }
-        .payment-box .wallet-addr {
+        .payment-box h3 { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+        .wallet-addr {
             background: var(--code-bg);
             border: 1px solid var(--border);
             border-radius: 8px;
@@ -162,114 +263,210 @@
             word-break: break-all;
             margin: 12px 0;
             cursor: pointer;
+            user-select: all;
         }
-        .payment-box .note {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 12px;
+        .payment-box .note { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+
+        /* Why section split */
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .why-item h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+        .why-item p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+        /* Comparison table */
+        .compare-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .compare-table th, .compare-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
         }
+        .compare-table th { font-weight: 600; color: var(--text); background: var(--surface); }
+        .compare-table td { color: var(--text-muted); }
+        .compare-table .check { color: var(--green); }
+        .compare-table .cross { color: #e74c3c; }
 
         /* FAQ */
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-        }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
         .faq-item:last-child { border-bottom: none; }
         .faq-item h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
-        .faq-item p { font-size: 14px; color: var(--text-muted); }
+        .faq-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            font-size: 13px;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
-        }
+        footer { text-align: center; padding: 40px 0; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
 
         @media (max-width: 640px) {
             .hero h1 { font-size: 32px; }
-            .features-grid { grid-template-columns: 1fr; }
+            .features-grid, .why-grid { grid-template-columns: 1fr; }
             .hero { padding: 48px 0 40px; }
+            .compare-table { font-size: 12px; }
+            .compare-table th, .compare-table td { padding: 8px; }
+            .btn-secondary { margin-left: 0; margin-top: 12px; display: block; }
         }
     </style>
 </head>
 <body>
 
-<div class="hero">
+<header class="hero">
     <div class="container">
-        <div class="hero-badge">Developer Tools</div>
-        <h1>Ship projects in <span>one command</span></h1>
-        <p>ScaffoldKit generates production-ready Python, Node.js, and Go projects with Docker, CI/CD, and tooling built in. Stop copying boilerplate.</p>
-        <div class="price">$39 <span>USD — lifetime access</span></div>
-        <a href="#buy" class="btn">Buy Now — $39</a>
+        <div class="hero-badge">🚀 Developer Tools — Lifetime Access</div>
+        <h1>Ship production projects in <span>one command</span></h1>
+        <p>ScaffoldKit generates fully configured Python, Node.js, and Go project directories with Docker, CI/CD pipelines, linting, and testing — ready to push and deploy.</p>
+        <div class="price">$39 <span>USD</span></div>
+        <p class="guarantee">✔ 7-day money-back guarantee · Free updates · Lifetime access</p>
+        <a href="#buy" class="btn">Buy ScaffoldKit — $39</a>
+        <a href="#features" class="btn btn-secondary">See features ↓</a>
     </div>
-</div>
+</header>
 
-<section id="features">
+<article>
+
+<section id="features" aria-label="Features">
     <div class="container">
         <h2>What you get</h2>
+        <p class="section-sub">Every project includes Docker, CI/CD, linting, testing, editor config, and a Makefile — so you can start coding immediately.</p>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="icon">🐍</div>
-                <h3>Python projects</h3>
-                <p>FastAPI, pytest, Docker, GitHub Actions. Virtualenv, requirements, linting — all configured.</p>
+                <h3>Python (FastAPI)</h3>
+                <p>Virtualenv, requirements.txt, pytest configuration, flake8 linting, Docker multi-stage builds, and a GitHub Actions workflow with matrix testing across Python 3.8–3.12.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">🟢</div>
-                <h3>Node.js projects</h3>
-                <p>Express scaffold, ESLint, Jest, Docker multi-stage builds, npm scripts ready to run.</p>
+                <h3>Node.js (Express)</h3>
+                <p>ESLint + Prettier, Jest testing framework, Docker multi-stage build, npm scripts for dev/test/build, and CI with Node 16/18/20 matrix strategy.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">🔵</div>
-                <h3>Go projects</h3>
-                <p>Clean module structure, Makefile, Docker, linting, test framework. production defaults.</p>
+                <h3>Go</h3>
+                <p>Standard module layout with cmd/ and pkg/ directories, Makefile with common targets, golangci-lint, Docker scratch-stage builds, and Go 1.21+ CI matrix.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">🐳</div>
-                <h3>Docker built-in</h3>
-                <p>Dockerfile + docker-compose.yml for every stack. Dev and production configurations.</p>
+                <h3>Docker + Docker Compose</h3>
+                <p>Production-ready Dockerfile with multi-stage builds, .dockerignore, and docker-compose.yml for local development across all three stacks.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">⚙️</div>
-                <h3>CI/CD included</h3>
-                <p>GitHub Actions workflow with multi-version testing, linting, and build checks out of the box.</p>
+                <h3>GitHub Actions CI/CD</h3>
+                <p>Pre-built workflows with matrix testing, linting checks, build verification, and test coverage. Works on push and pull_request.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">📦</div>
-                <h3>One file, everything</h3>
-                <p>Single ZIP download. Works on Linux, macOS, and Windows (WSL). No installers, no registrations.</p>
+                <h3>Everything in one ZIP</h3>
+                <p>Single download. Works on Linux, macOS, and Windows (WSL). No installers, no registrations, no dependencies required to run the scaffolder itself.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section>
+<section aria-label="Why ScaffoldKit">
+    <div class="container">
+        <h2>Why developers use ScaffoldKit</h2>
+        <p class="section-sub">Every project you start needs the same boilerplate. Stop writing it manually and focus on what makes your project unique.</p>
+        <div class="why-grid">
+            <div class="why-item">
+                <h3>⏱️ Save 30+ minutes per project</h3>
+                <p>Setting up Docker, CI/CD, linting, testing, and project structure from scratch takes at least 30 minutes. ScaffoldKit does it in under a second.</p>
+            </div>
+            <div class="why-item">
+                <h3>✅ Production defaults from day one</h3>
+                <p>Every scaffolded project includes proper error handling, logging, health checks, and deployment configurations — not a quickstart demo.</p>
+            </div>
+            <div class="why-item">
+                <h3>🔁 Consistent across stacks</h3>
+                <p>Python, Node.js, and Go projects follow the same conventions: Makefile targets, Docker patterns, CI structure. Switch between them without re-learning.</p>
+            </div>
+            <div class="why-item">
+                <h3>🆓 Free updates forever</h3>
+                <p>New stacks (Rust, TypeScript backends) and template improvements are included. Pay once, get all future versions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section aria-label="Comparison">
+    <div class="container">
+        <h2>How it compares</h2>
+        <p class="section-sub">ScaffoldKit vs. manual setup and other scaffolding tools.</p>
+        <div style="overflow-x:auto;">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Manual Setup</th>
+                        <th>Cookiecutter</th>
+                        <th>ScaffoldKit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Python, Node.js, Go</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span> (Python only)</td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Docker + Compose</td>
+                        <td><span class="cross">✗</span> (manual)</td>
+                        <td><span class="cross">✗</span> (varies)</td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>GitHub Actions CI</td>
+                        <td><span class="cross">✗</span> (manual)</td>
+                        <td><span class="cross">✗</span> (varies)</td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Linting + Testing</td>
+                        <td><span class="cross">✗</span> (manual)</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Makefile + Editor</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Time to first commit</td>
+                        <td>30–60 min</td>
+                        <td>5–10 min</td>
+                        <td><strong>&lt;30 seconds</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section aria-label="How it works">
     <div class="container">
         <h2>How it works</h2>
+        <p class="section-sub">Three steps from ZIP to running project.</p>
         <div class="steps">
             <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-content">
-                    <h3>Buy</h3>
-                    <p>Pay $39 in SOL or USDC-Solana. You'll receive the download link instantly via email.</p>
+                    <h3>Buy and download</h3>
+                    <p>Pay $39 in BTC, Lightning, SOL, USDC, or USDT. I'll email you the download link instantly.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-content">
-                    <h3>Run</h3>
-                    <p>Unzip and run the CLI. No dependencies to install — it's a single binary.</p>
+                    <h3>Run the CLI</h3>
+                    <p>Unzip and run <code>./scaffoldkit</code>. No dependencies, no package managers, no registrations.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-content">
-                    <h3>Generate</h3>
+                    <h3>Generate and ship</h3>
                     <div class="code-block">
                         <span class="cmd">$</span> scaffoldkit python my-app --all<br>
                         <span class="cmd">$</span> cd my-app<br>
                         <span class="cmd">$</span> make test<br>
-                        <span class="output">✓ 12 tests passed</span>
+                        <span class="output">✓ 12 tests passed in 0.34s</span>
                     </div>
                 </div>
             </div>
@@ -277,65 +474,68 @@
     </div>
 </section>
 
-<section id="buy">
+<section id="buy" aria-label="Buy ScaffoldKit">
     <div class="container">
         <h2>Buy ScaffoldKit</h2>
-        <p style="text-align:center;font-size:15px;color:var(--text-muted);margin-bottom:24px;"><strong>Price: $39 USD</strong> — Pay with the crypto that works best for you.</p>
+        <p style="text-align:center;font-size:15px;color:var(--text-muted);margin-bottom:24px;"><strong>Price: $39 USD</strong> — Lifetime access with free updates. Pay with the crypto that works best for you.</p>
 
         <div class="payment-box" style="margin-bottom:16px;">
-            <h3 style="font-size:16px;font-weight:600;margin-bottom:12px;">⚡ Bitcoin / Lightning</h3>
+            <h3>⚡ Bitcoin / Lightning</h3>
             <p style="font-size:14px;color:var(--text-muted);margin-bottom:8px;">Send BTC on-chain to:</p>
             <div class="wallet-addr" id="wallet-btc">bc1q3p4njajv7sqr2zk2j8eqh7j608hpfhjeul7l5x</div>
             <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Or pay via Lightning to <strong>gerhardsp@blink.sv</strong> — instant, near-zero fees.</p>
         </div>
 
         <div class="payment-box" style="margin-bottom:16px;">
-            <h3 style="font-size:16px;font-weight:600;margin-bottom:12px;">◎ Solana (SOL / USDC / USDT)</h3>
+            <h3>◎ Solana (SOL / USDC / USDT)</h3>
             <p style="font-size:14px;color:var(--text-muted);margin-bottom:8px;">Send to this address (Solana network only):</p>
             <div class="wallet-addr" id="wallet-sol">A7vcg6B1MVnDQ5BfnzifBKeDWmYWwEBBCQDHf3sxXC2R</div>
         </div>
 
         <div class="payment-box">
-            <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;"><strong>After payment, email your transaction signature to:</strong></p>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;"><strong>After payment, email your transaction ID to:</strong></p>
             <p style="font-size:15px;font-weight:600;margin:8px 0;">ezra_hermes@disroot.org</p>
-            <p class="note">I verify the transaction and email you the download link within minutes.</p>
+            <p class="note">I verify the transaction on-chain and email you the download link within minutes. BTC payments typically confirm in 10–30 minutes; Solana and Lightning confirm in seconds.</p>
         </div>
     </div>
 </section>
 
-<section>
+<section aria-label="Frequently Asked Questions">
     <div class="container">
-        <h2>Questions</h2>
+        <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
-            <h3>What do I get exactly?</h3>
-            <p>A ZIP file containing the ScaffoldKit CLI tool. It's a single executable — unzip and run. Includes templates for Python, Node.js, and Go projects with Docker, CI/CD, and full tooling configuration.</p>
+            <h3>What exactly do I get with ScaffoldKit?</h3>
+            <p>A ZIP file containing the ScaffoldKit CLI executable. Run it to generate production-ready Python (FastAPI), Node.js (Express), and Go projects — each with Docker, Docker Compose, GitHub Actions CI/CD, linting, testing, .editorconfig, .gitignore, Makefile, and a README template. No dependencies required to run the scaffolder itself.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept <strong>Bitcoin</strong> (on-chain to bc1q3p4njajv7sqr2zk2j8eqh7j608hpfhjeul7l5x), <strong>Lightning Network</strong> (gerhardsp@blink.sv), <strong>SOL</strong>, <strong>USDC</strong>, and <strong>USDT</strong> — all on the Solana network (to A7vcg6B1MVnDQ5BfnzifBKeDWmYWwEBBCQDHf3sxXC2R). After sending, email your transaction ID to ezra_hermes@disroot.org and I'll send the download link.</p>
         </div>
         <div class="faq-item">
             <h3>Does it work on Windows?</h3>
             <p>Yes — via WSL (Windows Subsystem for Linux). Native on Linux and macOS.</p>
         </div>
         <div class="faq-item">
-            <h3>What payment methods do you accept?</h3>
-            <p>Bitcoin (on-chain), Lightning (<strong>gerhardsp@blink.sv</strong>), SOL, USDC, and USDT — all on the Solana network. After sending payment, email your transaction signature to ezra_hermes@disroot.org and I'll send the download link.</p>
-        </div>
-        <div class="faq-item">
             <h3>How long does delivery take?</h3>
-            <p>Bitcoin transactions confirm in 10-30 minutes. Solana confirms in seconds. Lightning is instant. Once I verify the payment, I email the download link within minutes.</p>
+            <p>Bitcoin transactions confirm in 10–30 minutes. Solana confirms in seconds. Lightning is instant. Once I verify the payment on-chain, I email the download link within minutes.</p>
         </div>
         <div class="faq-item">
-            <h3>Will there be updates?</h3>
-            <p>Yes. Future stack additions (Rust, TypeScript backends, more) are included. You get all updates at no extra cost.</p>
+            <h3>Do I get updates?</h3>
+            <p>Yes. Future stack additions (Rust, TypeScript backends, more) and template improvements are included. Pay once, get all future versions at no extra cost.</p>
         </div>
         <div class="faq-item">
-            <h3>What if I'm not satisfied?</h3>
-            <p>Email me within 7 days and I'll issue a full refund — no questions asked.</p>
+            <h3>Can I get a refund?</h3>
+            <p>Absolutely. Email me within 7 days of purchase and I'll issue a full refund — no questions asked.</p>
         </div>
     </div>
 </section>
 
+</article>
+
 <footer>
     <div class="container">
-        <p>© 2026 Ezra Hermes. Built for developers who value their time.</p>
+        <p>© 2026 <strong>Ezra Hermes</strong> — Developer tools for people who ship. Built with 🖤 for the open-source community.</p>
+        <p style="margin-top:8px;font-size:12px;"><a href="https://ezra-hermes-42.github.io/scaffoldkit-store/">ScaffoldKit</a> — CLI project scaffolder for Python, Node.js, and Go. Pay with BTC, Lightning, SOL, USDC, or USDT.</p>
     </div>
 </footer>
 
@@ -345,12 +545,13 @@ document.addEventListener('DOMContentLoaded', function() {
         var el = document.getElementById(id);
         if (el) {
             el.addEventListener('click', function() {
-                var text = this.textContent;
+                var text = this.textContent.trim();
                 navigator.clipboard.writeText(text);
+                var original = text;
                 this.textContent = '✓ Copied!';
                 var self = this;
                 setTimeout(function() {
-                    self.textContent = text;
+                    self.textContent = original;
                 }, 2000);
             });
         }

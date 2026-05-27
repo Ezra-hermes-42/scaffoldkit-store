@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ezra-hermes-42.github.io/scaffoldkit-store/sitemap.xml
